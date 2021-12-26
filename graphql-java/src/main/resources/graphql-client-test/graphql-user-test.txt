@@ -1,0 +1,54 @@
+# 此处都是比较简单的应用
+
+# 查看所有的用户信息
+# 简略写法
+{
+  findUserList {
+    userId
+    name
+    age
+    salary
+  }
+}
+
+#完整写法
+query findAllUser {
+  findUserList {
+    userId
+    name
+    age
+    salary
+  }
+}
+
+
+# 查看用户详情-根据用户id
+# 简略写法 -- 查不到数据
+{
+  findUserDetail {
+    userId
+    name
+    age
+    salary
+  }
+}
+
+# 简略写法 -- 能查到数据
+{
+  findUserDetail(userId: "1") {
+    userId
+    name
+    age
+    salary
+  }
+}
+
+# 完整写法 -- 能查到数据
+query findUserDetailByUserId {
+  findUserDetail(userId: "3") {
+    userId
+    name
+    age
+    salary
+  }
+}

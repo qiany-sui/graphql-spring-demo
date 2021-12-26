@@ -1,0 +1,16 @@
+# 装了Graphql插件,这边的名称上报错不用管,是因为我在另一个模块上也定义了这些信息导致的,不影响使用
+
+type Query {
+    # 获取用户列表
+    findUserList: [User]
+    # 根据用户编号,获取用户详情
+    findUserDetail(userId: String): User
+}
+
+type User {
+    userId: String
+    name: String
+    age: Int
+    salary: Float
+    address: String
+}

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>qyq.example.graphql</groupId>
+        <artifactId>graphql-spring-demo</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+    <artifactId>graphql-kickstart</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>graphql-kickstart</name>
+    <description>graphql-kickstart</description>
+
+    <properties>
+        <graphql.kickstart.version>11.0.0</graphql.kickstart.version>
+        <mysql.connection.version>8.0.13</mysql.connection.version>
+        <mybatis-plus.version>3.4.3</mybatis-plus.version>
+    </properties>
+
+
+    <dependencies>
+        <!-- 必需：包含了默认配置、graphql-java 和 graphql-java-tools，可以简化配置 -->
+        <dependency>
+            <groupId>com.graphql-java-kickstart</groupId>
+            <artifactId>graphql-spring-boot-starter</artifactId>
+            <version>${graphql.kickstart.version}</version>
+        </dependency>
+
+        <!-- 可选：用于调试 GraphQL，功能类似 Restful 中的 Swagger -->
+        <dependency>
+            <groupId>com.graphql-java-kickstart</groupId>
+            <artifactId>playground-spring-boot-starter</artifactId>
+            <version>${graphql.kickstart.version}</version>
+        </dependency>
+
+        <!-- mysql -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql.connection.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-boot-starter</artifactId>
+            <version>${mybatis-plus.version}</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

@@ -1,0 +1,33 @@
+server:
+  port: 9982
+
+# 这边的配置含义,就不标出来了,大概意思就是graphql的入库地址是/graphql; 跨域关闭; playground调试工具已开启; graphql文件扫描的是resources下以.graphql为后缀的文件
+# 具体的可以直接上Github上的https://github.com/graphql-java-kickstart/graphql-spring-boot地址中看它的文档说明
+graphql:
+  servlet:
+    mapping: /graphql
+    enabled: true
+    corsEnabled: false # 关闭跨域，仅使用浏览器插件调试时设置为false
+    playground:
+      cdn:
+        enabled: true    # playground 使用 cdn 的静态文件
+    # if you want to @ExceptionHandler annotation for custom GraphQLErrors
+    exception-handlers-enabled: true
+    contextSetting: PER_REQUEST_WITH_INSTRUMENTATION
+  tools:
+    #扫描 resource 下 .graphql 后缀的文件
+    schema-location-pattern: "**/*.graphql"
+
+spring:
+  application:
+    name: graphql-kickstart-demo
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/graphql?autoReconnect=true&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&serverTimezone=Asia/Shanghai
+    username: graphql
+    password: graphql@12345
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+

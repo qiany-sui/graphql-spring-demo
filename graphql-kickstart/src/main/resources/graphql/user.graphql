@@ -1,0 +1,18 @@
+# 继承最外层的Query,User有关的方法名都写在此处
+extend type Query {
+    # 随机查询一个用户信息
+    findUser: User
+    # 根据用户编号,获取用户详情
+    findUserDetail(userId: String): User
+}
+
+# 定义User
+type User {
+    userId: String
+    name: String
+    age: Int
+    salary: Float
+    address: String
+    profession: Int
+    createTime: Date
+}

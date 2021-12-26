@@ -1,0 +1,33 @@
+# 随机查询一个用户信息
+query findUserRandom {
+  findUser {
+    userId
+    name
+  }
+}
+
+# 根据用户编号,获取用户详情
+query findUserByUserId {
+  findUserDetail(userId: "zelda_002") {
+    userId
+    name
+    address
+  }
+}
+
+
+# 别名方式查询
+# 同样是获取用户详情,但这时想获取两个
+query findUserByUserIdForAliases {
+  zelda: findUserDetail(userId: "zelda_002") {
+    userId
+    name
+    address
+  }
+  china: findUserDetail(userId: "china_1") {
+    newName: name
+    address
+    profession
+    createTime
+  }
+}
