@@ -7,7 +7,7 @@
     <artifactId>graphql-spring-demo</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>graphql-spring-demo</name>
-    <description>graphql-spring-demo</description>
+    <description>GraphQL服务端代码实现的Demo</description>
 
     <modules>
         <module>graphql-java</module>
